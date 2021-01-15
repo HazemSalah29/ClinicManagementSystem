@@ -12,12 +12,18 @@ import Model.Reservation;
 import Model.User;
 import Model.drugMedicine;
 import Model.nonDrugMedicine;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
 /**
  *
  * @author hazemsalah
  */
 public class ClinicManagementSysten {
+    
+    
 
     /**
      * @param args the command line arguments
