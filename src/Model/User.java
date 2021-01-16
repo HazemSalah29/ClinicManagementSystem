@@ -1,83 +1,80 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
-import Model.Login;
 
-/**
- *
- * @author hazemsalah
- */
+import java.util.Date;
+
 public class User {
-    private String UserName;
-    private int UserId;
-    private String UserType;
-    private int UserPass;
-    private String email;
 
-    public void setUserType(String UserType) {
-        this.UserType = UserType;
+	private String Id;
+	private String name;
+	private String type;
+	private Date createdAt = new Date();
+	private String email;
+	private String password;
+        private int age;
+	
+	
+	public User() {
+		super();
+	}
+	
+	
+	public User(String id, String name, String type, Date createdAt, String email, String password) {
+		super();
+		Id = id;
+		this.name = name;
+		this.type = type;
+		this.createdAt = new Date();
+		this.email = email;
+		this.password = password;
+	}
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public void setUserName(String UserName) {
-        this.UserName = UserName;
+    public int getAge() {
+        return age;
     }
+        
 
-    public void setUserId(int UserId) {
-        this.UserId = UserId;
-    }
 
-    public void setUserPass(int UserPass) {
-        this.UserPass = UserPass;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
-    public String getUserName() {
-        return UserName;
-    }
-
-    public int getUserId() {
-        return UserId;
-    }
-
-    public int getUserPass() {
-        return UserPass;
-    }
-
-    public String getUserType() {
-        return UserType;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public User(String UserName, int UserId, String UserType, int UserPass, String email, Login login) {
-        this.UserName = UserName;
-        this.UserId = UserId;
-        this.UserType = UserType;
-        this.UserPass = UserPass;
-        this.email = email;
-        this.login = login;
-    }
-
-    
-    
-    public Login login;
-
-            
-    
+	public String getId() {
+		return Id;
+	}
+	public void setId(String id) {
+		Id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	
 }

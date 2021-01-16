@@ -4,14 +4,8 @@
  * and open the template in the editor.
  */
 package clinicmanagementsysten;
-import Model.Assistant;
-import Model.Doctor;
-import Model.Login;
-import Model.Patient;
-import Model.Reservation;
+import ClinicController.UserController;
 import Model.User;
-import Model.drugMedicine;
-import Model.nonDrugMedicine;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -30,6 +24,14 @@ public class ClinicManagementSysten {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        User user = new User();
+        user.setName("hazem");
+        user.setEmail("hazem");
+        user.setPassword("hazem123");
+        UserController test = new UserController();
+        test.addDoctor(user);
     }
+    
     
 }

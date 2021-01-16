@@ -6,6 +6,7 @@
 package Model;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
@@ -16,8 +17,8 @@ import org.bson.Document;
  */
 public class MongoDB {
     public void DBConnection(){
-    MongoClient mongoClient = new MongoClient("localHost", 27017);
-    MongoDatabase Clinic = mongoClient.getDatabase("ClinicManagementSystem");
+    MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017/clinic"));
+    MongoDatabase Clinic = mongoClient.getDatabase("clinic");
     Clinic.createCollection("Doctor");
     Clinic.createCollection("Patient");
     Clinic.createCollection("User");
