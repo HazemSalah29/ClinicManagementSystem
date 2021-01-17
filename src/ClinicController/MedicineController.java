@@ -23,16 +23,14 @@ public class MedicineController {
     MongoCollection Medicinedb = database.getCollection("Medicine");
   
     public String addMedicine(Medicine medicine){
-        database.createCollection("User");
-        MongoCollection User = database.getCollection("User");
         Document Doc1 = new Document("MedicineName",medicine.getMedicineName()).append("MedicineType",medicine.getMedicineType()).append("Quantity",medicine.getMedQuantity()).append("Describtion",medicine.getMedicineDesc());
-        User.insertOne(Doc1);
+        Medicinedb.insertOne(Doc1);
         return "sucess";
     }
     
     public String updateMedicine(Medicine medicine){
     
-      Document oldMedicine =  (Document) Medicinedb.find(eq("id",medicine.getId())).first();
+      Document oldMedicine =   (Document) Medicinedb.find(eq("id",medicine.getId())).first();
       
       oldMedicine.append("MedicineName",medicine.getMedicineName());
       oldMedicine.append("MedicineType",medicine.getMedicineType());
